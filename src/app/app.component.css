@@ -1,0 +1,18 @@
+div {
+  text-align: center;
+}
+form {
+  margin-top: 50%;
+}
+.modal-content {
+  background: lightblue;
+  width: 55%;
+  float: right;
+  padding: 10px;
+}
+p {
+  float: left;
+}
+.close {
+  float: right;
+}

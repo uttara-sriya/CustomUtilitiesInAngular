@@ -1,0 +1,40 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submitUser()">
+    <div class="form-group">
+      <input type="file" (change)="uploadFile($event)" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success btn-block btn-lg" (click)="openPopup()">
+        Upload
+      </button>
+    </div>
+  </form>
+</div>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-title">
+        <p>Uploading {{progress}}%</p>
+        <button class="close" (click)="closePopup()">x</button>
+      </div>
+      <div class="modal-body">
+        <!-- Progress Bar -->
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            [style.width]="progress + '%'"
+            [attr.aria-valuenow]="progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
